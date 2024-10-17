@@ -4,9 +4,9 @@ import matplotlib.pyplot as plt
 import math
 from statistics import covariance
 
-file_path_1 = '/Users/lonersmac/Documents/Docs/113-1/DJJ Project/Pic/BABOON.BMP'
-file_path_2 = '/Users/lonersmac/Documents/Docs/113-1/DJJ Project/Pic/peppers256.bmp'
-file_path_3 = '/Users/lonersmac/Documents/Docs/113-1/DJJ Project/Pic/BABOON_BRIGHT.bmp'
+file_path_1 = '/Users/lonersmac/Documents/Docs/113-1/DJJ_Project/Pic/BABOON.BMP'
+file_path_2 = '/Users/lonersmac/Documents/Docs/113-1/DJJ_Project/Pic/peppers256.bmp'
+file_path_3 = '/Users/lonersmac/Documents/Docs/113-1/DJJ_Project/Pic/BABOON_BRIGHT.bmp'
 
 image1 = cv2.imread(file_path_1, cv2.IMREAD_GRAYSCALE)
 image2 = cv2.imread(file_path_2, cv2.IMREAD_GRAYSCALE)

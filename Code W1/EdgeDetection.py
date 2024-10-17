@@ -2,7 +2,7 @@ import numpy as np
 # import matplotlib.pyplot as plt
 import cv2
 
-file_path = '/Users/lonersmac/Documents/Docs/113-1/DJJ Project/Pic/peppers.bmp'
+file_path = '/Users/lonersmac/Documents/Docs/113-1/DJJ_Project/Pic/peppers.bmp'
 
 matrix1 = np.array([(1, 0, -1),(2, 0, -2),(1, 0, -1)], dtype='f') #Sobel horizontal
 matrix2 = np.array([(1, 2, 1),(0, 0, 0),(-1, -2, -1)], dtype='f') #Sobel vertical
@@ -106,8 +106,8 @@ def Laplacian(image):
     return image1
 
 
-cv2.imshow("Simple", cv2.cvtColor(Simple(2,image), cv2.COLOR_BGR2GRAY)/255)
+# cv2.imshow("Simple", cv2.cvtColor(Simple(1,image), cv2.COLOR_BGR2GRAY)/255)
 # cv2.imshow("Sobel", cv2.cvtColor(Sobel(4,image), cv2.COLOR_BGR2GRAY)/255)
-# cv2.imshow("Laplacian", cv2.cvtColor(Laplacian(image), cv2.COLOR_BGR2GRAY)/255)
+cv2.imshow("Laplacian", cv2.cvtColor(Laplacian(image), cv2.COLOR_BGR2GRAY)/255)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
