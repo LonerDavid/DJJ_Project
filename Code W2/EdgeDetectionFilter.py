@@ -3,9 +3,9 @@ import matplotlib.pyplot as plt
 import math
 
 n = np.arange(-30, 100)
-an = 0.2
+an = 0.5
 L = 10
-sigma = 0.2
+sigma = 1
 
 x = np.zeros_like(n, dtype=float)
 x[(n >= -10) & (n <= 20)] = 1

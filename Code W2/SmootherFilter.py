@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import math
 
 n = np.arange(-50, 101)
-an = 1.5
+an = 0.5
 L = 5
 sigma = 1
 
