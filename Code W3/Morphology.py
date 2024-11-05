@@ -63,7 +63,7 @@ def Closing(image, iter: int):
         image = Ero(image)
     return image
 
-images = np.hstack([image ,Erosion(image,3), Dilation(image,3), Opening(image,3), Closing(image,3)])
+images = np.hstack([image ,Erosion(image,10), Dilation(image,10), Opening(image,10), Closing(image,10)])
 
 cv2.imshow('Result', images)
 cv2.waitKey(0)
