@@ -3,12 +3,16 @@ import matplotlib.pyplot as plt
 
 t = np.linspace(-10, 10, 100)
 s = np.linspace(-10, 10, 100)
-data = np.array([(2, -1, 3), (-1, 3, 5), (0, 2, 4), (4, -2, -1), (1, 0, 4), (-2, 5, 5)
-])
+data = np.array([(2, -1, 3), (-1, 3, 5), (0, 2, 4), (4, -2, -1), (1, 0, 4), (-2, 5, 5)])
 mean_vec = np.mean(data, axis=0)
 centered_data = data - mean_vec
 
 U,S,Vh = np.linalg.svd(centered_data)
+
+print(U)
+print(S)
+print(Vh)
+
 
 #1-dimension
 x = mean_vec[0] + t * Vh[0, 0]

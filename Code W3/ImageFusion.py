@@ -7,8 +7,11 @@ file_path_2 = "/Users/lonersmac/Documents/Docs/113-1/DJJ_Project/Pic/Lena256c.bm
 
 image1 = cv2.imread(file_path_1, cv2.IMREAD_GRAYSCALE)
 image2 = cv2.imread(file_path_2, cv2.IMREAD_GRAYSCALE)
-th = 20
 
+# Width of the mask
+th = 20 
+
+# FFT
 f1 = np.fft.fft2(image1)
 f2 = np.fft.fft2(image2)
 
@@ -26,12 +29,11 @@ low_pass[c_row-th:c_row+th, c_col-th:c_col+th] = 1
 # High-pass mask
 high_pass = 1 - low_pass
 
-low_frequencies = f1_shift * low_pass
-high_frequencies = f2_shift * high_pass
+low_freq = f1_shift * low_pass
+high_freq = f2_shift * high_pass
+combined = low_freq+ high_freq
 
-combined = low_frequencies + high_frequencies
-
-# Inverse Fourier transform to get the final fused image
+# IFFT to get the final image
 f_ishift = np.fft.ifftshift(combined)
 fused_image = np.fft.ifft2(f_ishift)
 fused_image = np.abs(fused_image)
