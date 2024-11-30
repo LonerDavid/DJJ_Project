@@ -13,15 +13,15 @@ def blur_image(image, kernel, noise_level):
     return blurred + noise
     # return blurred
 
-def equalize_image(x, k, c):
-    X = np.fft.fft2(x)
-    K = np.fft.fft2(k, s=x.shape)
+def equalize_image(blurred_image, kernel, c):
+    F_blurred = np.fft.fft2(blurred_image)
+    F_kernel = np.fft.fft2(kernel, s=blurred_image.shape)
     
     # H = np.conj(F_kernel) / (np.abs(F_kernel)**2 + c)
-    H = 1 / (( c / np.conj(K)) + K)
+    H = 1 / (( c / np.conj(F_kernel)) + F_kernel)
     
-    Y = X * H
-    reconstructed_image = np.fft.ifft2(Y).real
+    F_reconstructed = F_blurred * H
+    reconstructed_image = np.fft.ifft2(F_reconstructed).real
     return reconstructed_image
 
 # image = np.tile(np.linspace(0, 255, 256), (256, 1))
@@ -29,7 +29,7 @@ file_path = "/Users/lonersmac/Documents/Docs/113-1/DJJ_Project/Pic/Peppers.png"
 image = plt.imread(file_path)
 
 kernel = gaussian_kernel(size=10)
-blurred_image = blur_image(image, kernel, noise_level=0.01)
+blurred_image = blur_image(image, kernel, noise_level=0.1)
 
 c1 = 0.01
 c2 = 0.1
