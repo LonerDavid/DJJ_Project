@@ -14,7 +14,7 @@ def Interpolation(image, m_scale, n_scale):
             n1 = n2 / n_scale
 
             #Boundary
-            if m1<0 or m1>=M1-1 or n1<0 or n1>=N1-1:
+            if m1<0 or m1>M1-1 or n1<0 or n1>N1-1:
                 new_image[m2, n2] = 0
             
             else:
